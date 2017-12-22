@@ -1,7 +1,7 @@
 # La_Forge
 site du café associatif
 
-<----------------FRONT------------------>
+<----------------FRONT------------------><br>
 PAGE D'ACCEUIL : MARCO<br>
 propose un truc jsute on veut 2 lien qui nous retourne vers CONNECTION ou INSRIPTION
 
@@ -16,7 +16,7 @@ si le compte existe deja un formulaire d'authentification : pseudo // mail // pw
 
 
 
-<----------------BACK------------------->
+<----------------BACK-------------------><br>
 LA BASE DE DONNEE:<br>
 elle devra contenir les champ : email, nom, prenom, mdp 
 
