@@ -2,40 +2,30 @@
 site du café associatif
 
 <----------------FRONT------------------>
-PAGE D'ACCEUIL : MARCO
-
+PAGE D'ACCEUIL : MARCO<br>
 propose un truc jsute on veut 2 lien qui nous retourne vers CONNECTION ou INSRIPTION
 
-MENU
+MENU<br>
 
-DISIGNE GLOBAL DES PAGE
-
+DISIGNE GLOBAL DES PAGE<br>
 en attente de proposition :p l'aisser libre cour a votre imagination le meilleur projet sera selectioner 
 
-AUTHENTIFICATION:
-
-mis en place d'un formulaire d'enregistrement :mail // psoeudo // nom // prenom // pw // validation de pw
-
+AUTHENTIFICATION:<br>
+mis en place d'un formulaire d'enregistrement :mail // psoeudo // nom // prenom // pw // validation de pw<br>
 si le compte existe deja un formulaire d'authentification : pseudo // mail // pw
 
 
 
 <----------------BACK------------------->
-LA BASE DE DONNEE:
-
+LA BASE DE DONNEE:<br>
 elle devra contenir les champ : email, nom, prenom, mdp 
 
-AUTHENTIFICATION:
+AUTHENTIFICATION:<br>
 prevoir un system securiser d'authentification
 
-TODO:
-
-Maquette du site (dessins).
-
-Commencer à pensés au fonctionnalités du site(boutique, comment elle fonctionne, inscription ou pas, ect...)
-
-Répartir les rôles
-
-Penser le design de la base de donnée
-
+TODO:<br>
+Maquette du site (dessins).<br>
+Commencer à pensés au fonctionnalités du site(boutique, comment elle fonctionne, inscription ou pas, ect...)<br>
+Répartir les rôles<br>
+Penser le design de la base de donnée<br>
 
