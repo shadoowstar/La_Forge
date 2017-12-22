@@ -2,15 +2,21 @@
 site du café associatif
 
 <----------------FRONT------------------><br>
+les fichier STYLE seront obligatoirement des fichier ".less"<br>
+JAVASCRIPT sera fait avec JQUERY
+BOOTSTRAP EST TOLERER<br>
+
 PAGE D'ACCEUIL : MARCO<br>
-propose un truc jsute on veut 2 lien qui nous retourne vers CONNECTION ou INSRIPTION
+propose un truc juste on veut 2 lien qui nous retourne vers CONNECTION ou INSRIPTION
 
 MENU<br>
+le menu comportera des liens vers 
 
-DISIGNE GLOBAL DES PAGE<br>
+DESIGNE GLOBALE DES PAGES<br>
 en attente de proposition :p l'aisser libre cour a votre imagination le meilleur projet sera selectioner 
 
 AUTHENTIFICATION:<br>
+sous<br>
 mis en place d'un formulaire d'enregistrement :mail // psoeudo // nom // prenom // pw // validation de pw<br>
 si le compte existe deja un formulaire d'authentification : pseudo // mail // pw
 
