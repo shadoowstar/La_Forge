@@ -16,7 +16,6 @@ le menu comportera des liens vers
 en attente de proposition :p l'aisser libre cour a votre imagination le meilleur projet sera selectioner 
 
 <b>AUTHENTIFICATION:</b><br>
-sous<br>
 mis en place d'un formulaire d'enregistrement :mail // psoeudo // nom // prenom // pw // validation de pw<br>
 si le compte existe deja un 
 formulaire d'authentification : pseudo // mail // pw
