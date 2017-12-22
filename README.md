@@ -18,10 +18,36 @@ en attente de proposition :p l'aisser libre cour a votre imagination le meilleur
 AUTHENTIFICATION:<br>
 sous<br>
 mis en place d'un formulaire d'enregistrement :mail // psoeudo // nom // prenom // pw // validation de pw<br>
-si le compte existe deja un formulaire d'authentification : pseudo // mail // pw
+si le compte existe deja un 
+formulaire d'authentification : pseudo // mail // pw
 
-
-
+<table>
+            <tr>
+                <td>NOM RUBRIQUE</td>
+                <td>FONCTIONNALITE</td>
+                <td>DESCRIPTIF</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
 <----------------BACK-------------------><br>
 LA BASE DE DONNEE:<br>
 elle devra contenir les champ : email, nom, prenom, mdp 
