@@ -21,33 +21,33 @@ mis en place d'un formulaire d'enregistrement :mail // psoeudo // nom // prenom 
 si le compte existe deja un 
 formulaire d'authentification : pseudo // mail // pw
 
-<table>
+   <table>
             <tr>
                 <td>NOM RUBRIQUE</td>
                 <td>FONCTIONNALITE</td>
                 <td>DESCRIPTIF</td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>article</td>
+                <td>reserver a l'admin</td>
+                <td>l'administrateur du site pourra ajouter des article sur les evenement passer et futur</td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>identification utilisateur/admin</td>
+                <td>identification de l'utilisateur</td>
+                <td>permetra de definir si l'utilisateur es admin ou non</td>
             </tr>
             <tr>
+                <td>un espace dedier au admin </td>
                 <td></td>
-                <td></td>
-                <td></td>
+                <td>permetra a l'admin d'introduire des nouveau article sur le site modifier le calendrier </td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>boutique</td>
+                <td>Vente en ligne</td>
+                <td>vente de 2 type d'objet art et goodies</td>
             </tr>
-        </table>
+   </table>
 <----------------BACK-------------------><br>
 LA BASE DE DONNEE:<br>
 elle devra contenir les champ : email, nom, prenom, mdp 
