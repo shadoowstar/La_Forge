@@ -6,8 +6,14 @@ les fichier STYLE seront obligatoirement des fichier ".less"<br>
 JAVASCRIPT sera fait avec JQUERY
 BOOTSTRAP EST TOLERER<br>
 
+<b>STYLE GENERAL</b>
+police prise sur google font :
+   - Risque pour les H1 et H2
+   -
+
 <b>PAGE D'ACCEUIL</b> : MARCO<br>
-propose un truc juste on veut 2 lien qui nous retourne vers CONNECTION ou INSRIPTION
+
+
 
 <b>MENU</b><br>
 le menu comportera des liens vers 
