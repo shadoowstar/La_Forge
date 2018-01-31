@@ -11,10 +11,6 @@ police prise sur google font :
    - Risque pour les H1 et H2
    -
 
-<b>PAGE D'ACCEUIL</b> : MARCO<br>
-
-
-
 <b>MENU</b><br>
 le menu comportera des liens vers 
 
