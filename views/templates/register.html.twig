@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig'%}
+
+{% set pageTitle = 'profil'%}
+
+{% block content %}
+    <h1>creation de compte !</h1>
+
+    <form action="{{ path('register') }}" method="POST">
+        <input type="text" name="email" placeholder="ex : test@exemple.com ">
+        <input type="text" name="name" placeholder="Nom">
+        <input type="text" name="firstname" placeholder="Prenom">
+        <input type="text" name="password" placeholder="Mots De Pass">
+        <input type="text" name="valpassword" placeholder="verifier votre Mots De Pass">
+        <input type="submit" >
+    </form>
+    {% if errors is defined %}
+        {% for error in errors %}
+            <p class="alert alert-danger">{{ error }}</p>
+        {% endfor %}
+    {% endif %}
+
+    {% if success is defined %}
+        <p class="alert alert-success">{{ success }}</p>
+    {% endif %}
+
+{% endblock %}
