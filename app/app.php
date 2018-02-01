@@ -19,7 +19,7 @@ $app->register(new Provider\MonologServiceProvider());
 $app->register(new Provider\DoctrineServiceProvider());
 
 $app->register(new Provider\SessionServiceProvider());
-zz
+
 
 
 
