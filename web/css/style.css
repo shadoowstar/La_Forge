@@ -14,7 +14,16 @@ a{
     color:red;
 }
 h1{
-    font-size: 50px;
+    font-family: 'Indie Flower' !important;
+    font-size: 3em;
+    font-weight: 600;
+
+    
+}
+span{
+    font-family: 'Indie Flower' ;
+    font-style : italic;
+    font-weight:200;
 }
 h2{
     margin-left: 100px;
@@ -23,19 +32,31 @@ h2{
     margin-bottom: 20px;
 }
 p{
-    color: #727472;
+    color: #434843;
     font-size: 20px;
+    font-style : italic;
 }
 /*--------ASIDE----------*/
 .logo{
-    width: 50%;
+    max-width: 50%;
+    min-width: 
     border-radius: 50%;
+    margin-top: 1em;
+    transition: all 0.5s;
+}
+.logoCentrage{
+    text-align: center;
+    width: 45%;
+    
 }
 .sousTitre{
     font-size: 20px;
+    font-family: 'Poiret One', cursive;
+    font-weight: 200;
 }
 .coter{
     margin-right: 50px;
+    width: 25%;
 }
 aside{
     margin-top: 100px;
@@ -62,7 +83,14 @@ aside{
 .galleryCoter{
     border-bottom: 1px solid #727472;
 }
+.histoire{
+    text-align: center;
+    margin-top: 40px;
+}
 /*----------header--------*/
+header{
+    
+}
 nav{
     padding-top: 20px;
     padding-bottom: 20px;
@@ -74,12 +102,13 @@ nav{
     top: 0;
     width: 100%;
  }
-.titre{
-    margin-top: 100px;
-    width: 80%;
+.banner{
+    padding-top: 90px;
+    width: auto;
     margin: auto;
     padding-bottom: 40px;
     border-bottom: 1px solid #727472;
+    display: flex;
 }
 /*--------CENTRE ARTICLE---------*/
 .articleTitre{
@@ -102,6 +131,8 @@ nav{
     display: flex;
     background-color: #F4F4F4;
     justify-content: center;
+    width: 90%;
+    margin: auto;
 }
 
 .article1 , .article2 , .article3,img{
