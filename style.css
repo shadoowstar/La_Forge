@@ -28,14 +28,18 @@ p{
 }
 /*--------ASIDE----------*/
 .logo{
-    width: 50%;
+    width: 30%;
     border-radius: 50%;
+}
+.logoCentrage{
+    text-align: center;
 }
 .sousTitre{
     font-size: 20px;
 }
 .coter{
     margin-right: 50px;
+    width: 25%;
 }
 aside{
     margin-top: 100px;
@@ -62,6 +66,10 @@ aside{
 .galleryCoter{
     border-bottom: 1px solid #727472;
 }
+.histoire{
+    text-align: center;
+    margin-top: 40px;
+}
 /*----------header--------*/
 nav{
     padding-top: 20px;
@@ -76,7 +84,7 @@ nav{
  }
 .titre{
     margin-top: 100px;
-    width: 80%;
+    width: auto;
     margin: auto;
     padding-bottom: 40px;
     border-bottom: 1px solid #727472;
@@ -102,6 +110,8 @@ nav{
     display: flex;
     background-color: #F4F4F4;
     justify-content: center;
+    width: 90%;
+    margin: auto;
 }
 
 .article1 , .article2 , .article3,img{
