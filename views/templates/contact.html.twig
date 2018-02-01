@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig'%}
+
+{%set pageTitle = 'Contact'%}
+
+{% block content %}
+    <h1>je suis la page de Contact !</h1>
+
+    {#ceci est un commentaire twig#}
+
+    {{ global.session.get('name') }}
+
+{% endblock %}
