@@ -15,6 +15,7 @@ a{
 }
 h1{
     font-size: 50px;
+    text-align: center;
 }
 h2{
     margin-left: 100px;
@@ -28,17 +29,19 @@ p{
 }
 /*--------ASIDE----------*/
 .logo{
-    width: 50%;
+    width: 10%;
     border-radius: 50%;
+    margin-top: 100px;
 }
 .sousTitre{
     font-size: 20px;
+    text-align: center;
 }
 .coter{
     margin-right: 50px;
 }
 aside{
-    margin-top: 100px;
+    margin-top: 61px;
 }
 .aside1{
     width: auto;
