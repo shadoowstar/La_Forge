@@ -6,6 +6,8 @@ use Symfony\Component\HttpFoundation\Response;// necessaire au system d'erreur
 $app->get('/', 'Controller\Controller::indexAction')
     ->bind('home');//donne un nom a cette route
 
+$app->get('/contact/', 'Controller\Controller::contactAction')
+    ->bind('contact');
 
 
 
