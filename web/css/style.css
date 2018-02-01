@@ -14,6 +14,7 @@ a{
     color:red;
 }
 h1{
+<<<<<<< HEAD
     font-family: 'Indie Flower' !important;
     font-size: 3em;
     font-weight: 600;
@@ -24,6 +25,10 @@ span{
     font-family: 'Indie Flower' ;
     font-style : italic;
     font-weight:200;
+=======
+    font-size: 50px;
+    text-align: center;
+>>>>>>> origin/master
 }
 h2{
     margin-left: 100px;
@@ -38,6 +43,7 @@ p{
 }
 /*--------ASIDE----------*/
 .logo{
+<<<<<<< HEAD
     max-width: 50%;
     min-width: 
     border-radius: 50%;
@@ -53,13 +59,22 @@ p{
     font-size: 20px;
     font-family: 'Poiret One', cursive;
     font-weight: 200;
+=======
+    width: 10%;
+    border-radius: 50%;
+    margin-top: 100px;
+}
+.sousTitre{
+    font-size: 20px;
+    text-align: center;
+>>>>>>> origin/master
 }
 .coter{
     margin-right: 50px;
     width: 25%;
 }
 aside{
-    margin-top: 100px;
+    margin-top: 61px;
 }
 .aside1{
     width: auto;
