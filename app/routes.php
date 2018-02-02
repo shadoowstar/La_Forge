@@ -5,10 +5,12 @@ use Symfony\Component\HttpFoundation\Response;// necessaire au system d'erreur
 
 $app->get('/', 'Controller\Controller::indexAction')
     ->bind('home');//donne un nom a cette route
+
 $app->get('/contact/', 'Controller\Controller::contactAction')
     ->bind('contact');//donne un nom a cette route
 
-
+    $app->get('/register/', 'Controller\Controller::registerAction')
+        ->bind('register');//donne un nom a cette route
 
 
 $app->error(function(Exception $e, Request $request, $code) use($app)

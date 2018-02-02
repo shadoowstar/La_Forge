@@ -24,8 +24,13 @@ class Controller{
         return $app['twig']->render('templates/contact.html.twig');
     }
 
+    public function registerAction(Application $app){
 
-    
+        return $app['twig']->render('templates/register.html.twig');
+    }
+
+
+
 }
 
 ?>
