@@ -25,6 +25,10 @@ class Controller{
     }
 
 
+    public function contactAction(Application $app){
+
+        return $app['twig']->render('templates/contact.html.twig');
+    }
 
 }
 

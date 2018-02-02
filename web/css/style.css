@@ -14,7 +14,10 @@ a{
     color:red;
 }
 h1{
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     font-family: 'Indie Flower' !important;
     font-size: 3em;
     font-weight: 600;
@@ -25,6 +28,11 @@ span{
     font-family: 'Indie Flower' ;
     font-style : italic;
     font-weight:200;
+<<<<<<< HEAD
+=======
+    font-size: 50px;
+    text-align: center;
+>>>>>>> origin/master
 }
 h2{
     margin-left: 100px;
@@ -39,8 +47,13 @@ p{
 }
 /*--------ASIDE----------*/
 .logo{
+<<<<<<< HEAD
 
     max-width: 50%;
+=======
+    max-width: 50%;
+    min-width:
+>>>>>>> origin/master
     border-radius: 50%;
     margin-top: 1em;
     transition: all 0.5s;
@@ -54,6 +67,16 @@ p{
     font-size: 20px;
     font-family: 'Poiret One', cursive;
     font-weight: 200;
+<<<<<<< HEAD
+=======
+    width: 10%;
+    border-radius: 50%;
+    margin-top: 100px;
+}
+.sousTitre{
+    font-size: 20px;
+    text-align: center;
+>>>>>>> origin/master
 }
 .coter{
     margin-right: 50px;
