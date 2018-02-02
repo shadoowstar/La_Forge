@@ -18,9 +18,14 @@ class Controller{
 
         return $app['twig']->render('templates/index.html.twig');
     }
+
+    public function contactAction(Application $app){
+
+        return $app['twig']->render('templates/contact.html.twig');
+    }
+
+
     
-
-
 }
 
 ?>
