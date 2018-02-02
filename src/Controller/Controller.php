@@ -29,6 +29,11 @@ class Controller{
         return $app['twig']->render('templates/register.html.twig');
     }
 
+    public function connectionAction(Application $app){
+
+        return $app['twig']->render('templates/connection.html.twig');
+    }
+
 
 
 }
