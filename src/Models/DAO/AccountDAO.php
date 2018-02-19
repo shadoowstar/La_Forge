@@ -3,7 +3,6 @@ namespace Models\DAO;
 
 use \PDO;
 use Models\Domain\Account;
-use Doctrine\DBAL\Connection;
 
 class AccountDAO{
     protected $_db;

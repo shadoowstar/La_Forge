@@ -11,5 +11,4 @@ require __DIR__.'/../app/routes.php';
 
 
 $app->run(); //lancement de l'app
-
 ?>

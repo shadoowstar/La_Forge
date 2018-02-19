@@ -10,13 +10,13 @@ namespace Controller;
 
 use Silex\Application;
 use Models\Domain\Account;
-use Models\Domain\Article;
 
 
 
 class Controller{
     public function indexAction(Application $app){
-        return $app['twig']->render('templates/index.html.twig', array('articles' => $app['dao.article']->findArticleByLimit(4)));
+
+        return $app['twig']->render('templates/index.html.twig');
     }
 
     public function contactAction(Application $app){
@@ -32,11 +32,6 @@ class Controller{
     public function connectionAction(Application $app){
 
         return $app['twig']->render('templates/connection.html.twig');
-    }
-
-    public function articleAction(Application $app, $id)
-    {
-        return $id;
     }
 
 

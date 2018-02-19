@@ -1,7 +1,5 @@
 <?php
 
-use Models\DAO\ArticleDAO;
-
 $app['twig.path']=  array( __DIR__.'/../views');//chemin du dossier des vue
 
 $app['twig.options']=  array(
@@ -15,15 +13,10 @@ $app['monolog.level'] = 'warning' ;//debug/info/warning/error
 
 $app['db.options'] = array(
     'driver' => 'pdo_mysql',
-    'host' => 'e89458-mysql.services.easyname.eu',
-    'dbname' => 'u141134db1',
-    'user' => 'u141134db1',
-    'password' => 'laforge123',
+    'host' => 'localhost',
+    'dbname' => 'silex',
+    'user' => 'root',
+    'password' => '',
     'charset' => 'utf8'
  );
-
- $app['dao.article'] = function($app){
-     return new ArticleDAO($app['db']);
- }
-
 ?>
