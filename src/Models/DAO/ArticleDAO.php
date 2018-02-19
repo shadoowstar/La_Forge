@@ -73,6 +73,28 @@ class ArticleDAO
         return $articlelist;
     }
 
+    public function getArticleById($id)
+    {
+        $response = $this->_db->prepare('SELECT * FROM articles WHERE id=:id');
+        $response->bindvalue('id', $id, PDO::PARAM_INT);
+        $response->execute();
+        $article_db = $response->fetch();
+
+        if(empty($article_db))
+        {
+            return false;
+        }
+
+        $article = new Article();
+        $article->setId($article_db['id']);
+        $article->setTitle($article_db['title']);
+        $article->setContent($article_db['content']);
+        $article->setImgUrl($article_db['img_url']);
+        //$article->setPostDate($row['post_date']);
+        
+        return $article;
+    }
+
 
 
 }
