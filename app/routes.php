@@ -9,10 +9,14 @@ $app->get('/', 'Controller\Controller::indexAction')
 $app->get('/contact/', 'Controller\Controller::contactAction')
     ->bind('contact');//donne un nom a cette route
 
-$app->get('/shop/', 'Controller\Controller::contactAction')
-    ->bind('shop');//donne un nom a cette route
+$app->get('/register/', 'Controller\Controller::registerAction')
+    ->bind('register');//donne un nom a cette route
 
+$app->get('/connection/', 'Controller\Controller::connectionAction')
+    ->bind('connection');//donne un nom a cette route
 
+$app->get('/articles/{id}', 'Controller\Controller::articleAction')
+    ->bind('article');
 
 
 $app->error(function(Exception $e, Request $request, $code) use($app)
