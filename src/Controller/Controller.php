@@ -24,10 +24,10 @@ class Controller{
         return $app['twig']->render('templates/contact.html.twig');
     }
 
+    
+    public function shopAction(Application $app){
 
-    public function contactAction(Application $app){
-
-        return $app['twig']->render('templates/contact.html.twig');
+        return $app['twig']->render('templates/shop.html.twig');
     }
 
 }
