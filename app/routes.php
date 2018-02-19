@@ -12,9 +12,11 @@ $app->get('/contact/', 'Controller\Controller::contactAction')
 $app->get('/register/', 'Controller\Controller::registerAction')
     ->bind('register');//donne un nom a cette route
 
-    $app->get('/connection/', 'Controller\Controller::connectionAction')
-        ->bind('connection');//donne un nom a cette route
+$app->get('/connection/', 'Controller\Controller::connectionAction')
+    ->bind('connection');//donne un nom a cette route
 
+$app->get('/articles/{id}', 'Controller\Controller::articleAction')
+    ->bind('article');
 
 
 $app->error(function(Exception $e, Request $request, $code) use($app)
