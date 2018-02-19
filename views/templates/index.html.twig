@@ -5,7 +5,6 @@
 {% block content %}
 
 
-
     <div class="banner container">
         <div>
             <h1>LA FORGE <br><span class="slogan">Café Associatif</span></h1>
@@ -96,6 +95,7 @@
                 </div>
             </section>
 
+            {% for article in articles %}
             <section id="articleCentre">
 
                 <div class="articleTitre">
@@ -113,26 +113,21 @@
                         <button class="btn" type="button" name="button"><strong>CONTINUE READING</strong></button>
                     </div>
                 </div>
-            </section>
 
-            <section id="articleCentre">
-                <div class="articleTitre">
-                    <h2>EUISMOD ET ACCUMSAN</h2>
-                    <p class="article">LOREM IPSUM DOLOR AMET NULLAM CONSEQUAT ETIAM FEUGIAT</p>
-                </div>
+                <div class="article1">
 
-                <div class="article3">
                     <div class="imageCentre">
-                        <img src="{{asset('img/logos.jpg')}}" alt="">
+                        <img src="{{ article.__get('_img_url') }}" alt="">
                     </div>
-
 
                     <div class="texteCentre">
-                        <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-                        <button class="btn" type="button" name="button"><strong>CONTINUE READING</strong></button>
+                        <p>{{ article.__get('_content') }}</p>
+                        <a href="{{ path('article', { id : article.__get('_id')}) }}"><button class="btn" href="#" type="button" name="button"><strong>Voir l'article</strong></button></a>
                     </div>
                 </div>
             </section>
+            {% endfor %}
+
         </div>
     </section>
 
