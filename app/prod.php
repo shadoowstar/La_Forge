@@ -13,10 +13,12 @@ $app['monolog.level'] = 'warning' ;//debug/info/warning/error
 
 $app['db.options'] = array(
     'driver' => 'pdo_mysql',
-    'host' => 'localhost',
-    'dbname' => 'silex',
-    'user' => 'root',
-    'password' => '',
+    'host' => 'e89458-mysql.services.easyname.eu',
+    'dbname' => 'u141134db1',
+    'user' => 'u141134db1',
+    'password' => 'laforge123',
     'charset' => 'utf8'
  );
+
+$app['index.articles'] = 4;
 ?>
