@@ -6,4 +6,14 @@
 {% block content %}
 
 
+    <section id="openArticle">
+        <h1 class="OpenArticleTitre">{{ article.__get('_title') }}</h1>
+        <img id="imgOpen" src="{{ article.__get('_img_url') }}" alt="">
+        <p class="openArticleTexte">{{ article.__get('_content') }}</p>
+
+        <div class="OpenArticleButton">
+            <p><a href="{{path('home')}}"><button class="btn" href="#" type="button" name="button"><strong>Retour a l'accueil</strong></button></a></p>
+        </div>
+    </div>
+    </section>
 {% endblock %}
