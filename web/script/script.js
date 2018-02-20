@@ -1,3 +1,5 @@
+//------------------MENU SCROLL
+
 // On recupere la position du bloc par rapport au haut du site
 var position_top_raccourci = $("#nav").offset().top;
 //Au scroll dans la fenetre on déclenche la fonction
@@ -14,6 +16,7 @@ $(window).scroll(function () {
 
 
 
+//----------------LOGO 
 
 // Rotations du logo au survol de la souris
 $('.logo').mouseover(

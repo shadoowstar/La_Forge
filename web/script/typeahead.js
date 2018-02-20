@@ -1,3 +1,16 @@
+//---------------RECHERCHE POUR BDD
+
+$("nav").on("click",".tt-selectable", function(){
+    console.log($(".typeahead")[1].value);
+});
+// recupère élément entrée
+$(".typeahead").keyup(function(){
+    //console.log($(this).val());
+});
+
+
+
+//--------------SHEARCH BAR RESULT------
 var substringMatcher = function(strs) {
   return function findMatches(q, cb) {
     var matches, substringRegex;
