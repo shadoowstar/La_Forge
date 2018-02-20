@@ -13,6 +13,8 @@ $(window).scroll(function () {
 });
 
 
+
+
 // Rotations du logo au survol de la souris
 $('.logo').mouseover(
     function () {

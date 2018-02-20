@@ -24,7 +24,6 @@ $app->register(new Provider\SessionServiceProvider());
 
 
 
-
 $app['dao.account'] = function($app){
     return new AccountDAO($app['db']);
 };
