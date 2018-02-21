@@ -22,18 +22,15 @@ $app->get('/deconnection/', 'Controller\Controller::logoutAction')
 $app->get('/article/{id}', 'Controller\Controller::articleAction')
     ->bind('article');
 
-<<<<<<< HEAD
 $app->get('/espace-membre/', 'Controller\Controller::memberAction')
     ->bind('member-area');
 
-=======
 $app->get('/search/', 'Controller\Controller::searchAction')
     ->bind('search');
 
 $app->match('/sign-in/', 'Controller\Controller::signinAction')
     ->method('POST')
     ->bind('sign-in');
->>>>>>> origin/master
 
 $app->error(function(Exception $e, Request $request, $code) use($app)
 {

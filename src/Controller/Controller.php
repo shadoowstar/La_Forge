@@ -158,14 +158,12 @@ class Controller{
         }
         return $app['twig']->render('templates/connection.html.twig');
     }
-<<<<<<< HEAD
     
     public function memberAction(Application $app){
 
         return $app['twig']->render('templates/member-area.html.twig');
     }
     
-=======
     public function searchAction(Application $app)
     {
         if(isset($_GET['title']))
@@ -193,7 +191,6 @@ class Controller{
         }
     }
 
->>>>>>> origin/master
     public function articleAction(Application $app, $id)
     {
         if(!preg_match("#^[0-9]{1,5}$#", $id))

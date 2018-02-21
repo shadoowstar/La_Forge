@@ -5,13 +5,10 @@
         <title>{{ pageTitle}}</title>
         <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-<<<<<<< HEAD
         <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico|Poiret+One|Annie+Use+Your+Telescope|Roboto" rel="stylesheet">
-=======
         <link rel="stylesheet" href="{{ asset('css/typenohead.css') }}">
-        <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico|Poiret+One" rel="stylesheet">
->>>>>>> origin/master
+        
     </head>
     <body>
         <!-----------HEADER---------->
@@ -45,20 +42,15 @@
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{path('connection')}}">Connexion <span class="sr-only">(current)</span></a>
                             </li>
-<<<<<<< HEAD
-                               
+
+                            {% else %}
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{path('member-area')}}">Espace membre<span class="sr-only">(current)</span></a>
                             </li>
-                        </ul>
-=======
-                            {% else %}
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{path('deconnection')}}">Deconnection <span class="sr-only">(current)</span></a>
                             </li>
                             {% endif %}
->>>>>>> origin/master
-
                         </ul>
 
                         <form class="search-form form-inline my-2 my-lg-0">

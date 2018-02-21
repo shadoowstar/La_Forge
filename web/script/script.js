@@ -16,7 +16,9 @@ $(window).scroll(function () {
 
 
 $('#sign-in-form').submit(function(event){
+    
     event.preventDefault();
+    
     $.ajax({
         url: $(this).attr('action'),
         type: 'POST',
