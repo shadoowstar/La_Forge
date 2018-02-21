@@ -9,7 +9,8 @@ $app->get('/', 'Controller\Controller::indexAction')
 $app->get('/contact/', 'Controller\Controller::contactAction')
     ->bind('contact');//donne un nom a cette route
 
-$app->get('/register/', 'Controller\Controller::registerAction')
+$app->match('/register/', 'Controller\Controller::registerAction')
+    ->method('GET|POST')
     ->bind('register');//donne un nom a cette route
 
 $app->get('/connection/', 'Controller\Controller::connectionAction')
