@@ -112,7 +112,35 @@ class Controller{
         public function connectionAction(Application $app){
 
             return $app['twig']->render('templates/connection.html.twig');
+    }
+    public function searchAction(Application $app)
+    {
+        if(isset($_GET['title']))
+        {
+            if(!preg_match('#^[a-zA-Z0-9 ]{1,150}$#', $_GET['title']))
+            {
+                return $app->json('Erreur');
+            }
+            $articles = $app['dao.article']->getArticlesByName($_GET['title']);
+            if(empty($articles))
+            {
+                return $app->json('Erreur aucun article');
+            }
+
+            $jsonconvertlist = array();
+            foreach($articles as $article)
+            {
+                $jsonconvertlist[] = array(
+                    'id' => $article->_id,
+                    'name' => $article->_title
+                );
+            }
+            return $app->json($jsonconvertlist);
+
         }
+
+        return $app->json('caca');
+    }
 
         public function articleAction(Application $app, $id){
             if(!preg_match("#^[0-9]{1,5}$#", $id)){

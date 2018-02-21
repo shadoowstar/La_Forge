@@ -19,6 +19,8 @@ $app->get('/connection/', 'Controller\Controller::connectionAction')
 $app->get('/article/{id}', 'Controller\Controller::articleAction')
     ->bind('article');
 
+$app->get('/search/', 'Controller\Controller::searchAction')
+    ->bind('search');
 
 $app->error(function(Exception $e, Request $request, $code) use($app)
 {
