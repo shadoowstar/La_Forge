@@ -2,6 +2,7 @@
 namespace Models\DAO;
 
 use \PDO;
+use Silex\Application;
 use Models\Domain\Account;
 use Doctrine\DBAL\Connection;
 
@@ -19,6 +20,12 @@ class AccountDAO
 
     public function setDb(Connection $newDb){
         $this->_db = $newDb;
+    }
+
+    public function isConnected(Application $app){
+        if (isset($app['session']->get('user')['id'])) {
+            return true;
+        }
     }
 
     public function findAll(){

@@ -16,12 +16,15 @@ $app->match('/register/', 'Controller\Controller::registerAction')
 $app->get('/connection/', 'Controller\Controller::connectionAction')
     ->bind('connection');//donne un nom a cette route
 
+$app->get('/deconnection/', 'Controller\Controller::logoutAction')
+    ->bind('deconnection');
+
 $app->get('/article/{id}', 'Controller\Controller::articleAction')
     ->bind('article');
 
 $app->get('/search/', 'Controller\Controller::searchAction')
     ->bind('search');
-    
+
 $app->match('/sign-in/', 'Controller\Controller::signinAction')
     ->method('POST')
     ->bind('sign-in');

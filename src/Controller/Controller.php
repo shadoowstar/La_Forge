@@ -122,8 +122,6 @@ class Controller{
                 $errors['addressPostalCode'] = true;
                 echo 'address postal code';
             }
-
-//-------------------------en cours----------------------//
                 if(!isset($errors)){
                     $emailExist = $app['dao.account']->findByEmail($_POST['email']);
                     var_dump($emailExist);
@@ -131,7 +129,7 @@ class Controller{
                         echo "email deja existant";
                         $errors[]= true;
                     }
-                    //si pas d'erreur alors on injécte le compte en bdd:
+
                     if(!isset($errors)){
                         $account = new Account();
                         $account->setName($_POST['name']);
@@ -145,13 +143,20 @@ class Controller{
                     }
                 }
         }
+        if($app['dao.account']->isConnected($app))
+        {
+            $app->abort(403);
+        }
         return $app['twig']->render('templates/register.html.twig');
     }
 
 
     public function connectionAction(Application $app){
-
-            return $app['twig']->render('templates/connection.html.twig');
+        if($app['dao.account']->isConnected($app))
+        {
+            $app->abort(403);
+        }
+        return $app['twig']->render('templates/connection.html.twig');
     }
     public function searchAction(Application $app)
     {
@@ -178,8 +183,6 @@ class Controller{
             return $app->json($jsonconvertlist);
 
         }
-
-        return $app->json('caca');
     }
 
     public function articleAction(Application $app, $id)
@@ -196,6 +199,13 @@ class Controller{
             }
             return $app['twig']->render('templates/article.html.twig', array( "article" => $article));
         }
+    }
+
+    public function logoutAction(Application $app){
+        if ($app['dao.account']->isConnected($app)) {
+            $app['session']->remove('user');
+        }
+        return $app->redirect($app['url_generator']->generate('home'));
     }
 }
 ?>
