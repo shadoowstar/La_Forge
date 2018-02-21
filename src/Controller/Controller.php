@@ -24,6 +24,47 @@ class Controller{
         return $app['twig']->render('templates/contact.html.twig');
     }
 
+    public function signinAction(Application $app)
+    {
+        if(isset($_POST['email']) && isset($_POST['password']))
+        {
+            if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
+            {
+                $errors[] = 'L\'adresse email saisie n\'est pas valide !';
+            }
+
+            if(!isset($errors))
+            {
+                $account = $app['dao.account']->findByEmail($_POST['email']);
+                if($account && password_verify($_POST['password'], $account->_password))
+                {
+                    $app['session']->set('user', array(
+                        'id' => $account->_id,
+                        'email' => $account->_email,
+                        'name' => $account->_name,
+                        'adress_line' => $account->_address_line,
+                        'adress_postal' => $account->_adresse_city,
+                    ));
+                    return $app->json("Tu es bien connectés mon amis !");
+                }
+                else
+                {
+                    $errors[] = 'Aucun compte n\' est existant !';
+                }
+            }
+        }
+
+        if(isset($errors))
+        {
+            $data = array(
+                'type' => 'error',
+                'content' => $errors
+            );
+
+            return $app->json($data);
+        }
+        return $app->json('prout');
+    }
     //-----------VERIFICATION APRES INSCRIPTION------------//
 
     public function registerAction(Application $app){
@@ -107,9 +148,8 @@ class Controller{
         return $app['twig']->render('templates/register.html.twig');
     }
 
-//-------------------FIN VERIFICATION-----------------------//
 
-        public function connectionAction(Application $app){
+    public function connectionAction(Application $app){
 
             return $app['twig']->render('templates/connection.html.twig');
     }
@@ -142,19 +182,20 @@ class Controller{
         return $app->json('caca');
     }
 
-        public function articleAction(Application $app, $id){
-            if(!preg_match("#^[0-9]{1,5}$#", $id)){
-                $errors[] = 'L\'id saisie est invalide !';
-            }
-            if(!isset($errors)){
-                $article = $app['dao.article']->getArticleById($id);
-
-                if(empty($article)){
-                    $app->abort(404);
-                }
-                return $app['twig']->render('templates/article.html.twig', array( "article" => $article));
-            }
+    public function articleAction(Application $app, $id)
+    {
+        if(!preg_match("#^[0-9]{1,5}$#", $id))
+        {
+            $errors[] = 'L\'id saisie est invalide !';
         }
-
+        if(!isset($errors))
+        {
+            $article = $app['dao.article']->getArticleById($id);
+            if(empty($article)){
+                $app->abort(404);
+            }
+            return $app['twig']->render('templates/article.html.twig', array( "article" => $article));
+        }
     }
+}
 ?>

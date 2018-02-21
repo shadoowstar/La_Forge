@@ -21,6 +21,10 @@ $app->get('/article/{id}', 'Controller\Controller::articleAction')
 
 $app->get('/search/', 'Controller\Controller::searchAction')
     ->bind('search');
+    
+$app->match('/sign-in/', 'Controller\Controller::signinAction')
+    ->method('POST')
+    ->bind('sign-in');
 
 $app->error(function(Exception $e, Request $request, $code) use($app)
 {

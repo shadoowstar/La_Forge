@@ -15,6 +15,37 @@ $(window).scroll(function () {
 });
 
 
+$('#sign-in-form').submit(function(event){
+    event.preventDefault();
+    $.ajax({
+        url: $(this).attr('action'),
+        type: 'POST',
+        dataType: 'JSON',
+        data: $(this).serialize(),
+        timeout: 8000,
+
+        success: function(response)
+        {
+            if(response.type == "error")
+            {
+                response.content.forEach(error)
+                {
+                    //ici il faudra faire l'ajout des erreur dynamique avec un append
+                }
+            }
+            else if(response.type == "success")
+            {
+                //ici affichage de notre response.content dynamiquement
+            }
+            console.log(response);
+        },
+        error: function(error)
+        {
+            console.log(error);
+        },
+    });
+});
+
 
 //----------------LOGO 
 
