@@ -3,7 +3,7 @@
 
 use Silex\Provider;
 use Models\DAO\AccountDAO;
-use Models\DAO\EventDAO;
+use Models\DAO\ArticleDAO;
 
 $app = new Silex\Application();
 
@@ -21,9 +21,15 @@ $app->register(new Provider\DoctrineServiceProvider());
 
 $app->register(new Provider\SessionServiceProvider());
 
+
+
+
 $app['dao.account'] = function($app){
     return new AccountDAO($app['db']);
 };
-$app['dao.event'] = function($app){
-    return EventDAO::getInstance($app);
+$app['dao.article'] = function($app)
+{
+    return new ArticleDAO($app['db']);
 };
+
+?>

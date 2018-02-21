@@ -3,15 +3,20 @@
     <head>
         <meta charset="utf-8">
         <title>{{ pageTitle}}</title>
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/overlay.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/fullcalendar.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/fullcalendar.print.min.css') }}" media='print'>
-        <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico|Poiret+One" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico|Poiret+One|Annie+Use+Your+Telescope|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/typenohead.css') }}">
+
     </head>
     <body>
         <!-----------HEADER---------->
+
+        <script>
+            var indexPath = "{{ path('home') }}";
+        </script>
+
         <header>
             <div class="Menu">
                 <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
@@ -20,7 +25,7 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <a class="navbar-brand" href="{{path('home')}}"> <strong> La Forge</strong></a>
+                        <a class="navbar-brand" href="{{path('home')}}"> <strong>La Forge</strong></a>
                         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{path('home')}}">Accueil <span class="sr-only">(current)</span></a>
@@ -30,24 +35,27 @@
                                 <a class="nav-link" href="{{path('contact')}}">Contact <span class="sr-only">(current)</span></a>
                             </li>
 
+                            {% if global.session.get('user')['id'] is not defined %}
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{path('register')}}">Inscription <span class="sr-only">(current)</span></a>
                             </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{path('connection')}}">Connexion <span class="sr-only">(current)</span></a>
+                            </li>
 
+                            {% else %}
                             <li class="nav-item active">
-                                <a class="nav-link" href="{{path('connection')}}">Connection <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="{{path('member-area')}}">Espace membre<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="{{path('event')}}">Calendrier <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="{{path('deconnection')}}">Deconnection <span class="sr-only">(current)</span></a>
                             </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="{{path('calendarAdmin')}}">Ajout d'evenement<span class="sr-only">(current)</span></a>
-                            </li>
+                            {% endif %}
                         </ul>
 
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
-                            <button class="btn" type="submit">Rechercher</button>
+                        <form class="search-form form-inline my-2 my-lg-0">
+                            <input data-ajax="{{ path('search') }}" class="form-control mr-sm-2 typeahead" type="text" placeholder="Rechercher">
+                            <div id="search-suggestion"></div>
                         </form>
 
                     </div>
@@ -62,7 +70,8 @@
         <!------------FOOTER---------->
         <footer>
             <div class="pied">
-                <p>© 2018 La Forge By ...</p>
+                <p>© 2018 La Forge By</p>
+                <p>Pernette Jerrylee, Siméon Jérôme, Voynier Valentin et Marc-Antoine Dur</p>
             </div>
         </footer>
         <script>
