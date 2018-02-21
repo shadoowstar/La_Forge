@@ -18,6 +18,9 @@ $app->get('/connection/', 'Controller\Controller::connectionAction')
 $app->get('/article/{id}', 'Controller\Controller::articleAction')
     ->bind('article');
 
+$app->get('/espace-membre/', 'Controller\Controller::memberAction')
+    ->bind('member-area');
+
 
 $app->error(function(Exception $e, Request $request, $code) use($app)
 {

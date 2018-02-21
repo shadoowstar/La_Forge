@@ -5,7 +5,8 @@
         <title>{{ pageTitle}}</title>
         <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico|Poiret+One" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico|Poiret+One|Annie+Use+Your+Telescope|Roboto" rel="stylesheet">
     </head>
     <body>
         <!-----------HEADER---------->
@@ -17,7 +18,7 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <a class="navbar-brand" href="{{path('home')}}"> <strong> La Forge</strong></a>
+                        <a class="navbar-brand" href="{{path('home')}}"> <strong>La Forge</strong></a>
                         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{path('home')}}">Accueil <span class="sr-only">(current)</span></a>
@@ -33,6 +34,10 @@
 
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{path('connection')}}">Connexion <span class="sr-only">(current)</span></a>
+                            </li>
+                               
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{path('member-area')}}">Espace membre<span class="sr-only">(current)</span></a>
                             </li>
                         </ul>
 

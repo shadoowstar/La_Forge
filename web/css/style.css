@@ -30,11 +30,51 @@ a{
     font-size: 20px;
     color:red;
 }
+/*----------header--------*/
+.headertext h1{
+    text-align: center;
+}
+nav{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: fixed;
+   
+}
+#nav{
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    width: 100%;
+     background-color: #e8d4bd !important;
+    box-shadow: 0 8px 6px -6px black;
+ }
+
+.nav-link{
+    transition: all 0.1s ease-in;
+}
+.nav-link:hover{
+    transform: scale(1.02);
+    color: #a53535 !important;
+}
+.banner{
+    padding-top: 80px;
+    width: auto;
+    margin: auto;
+    padding-bottom: 20px;
+    margin-bottom : 20px;
+    display: flex;
+}
 /*----css formulaire connexion et inscription*/
 
 #registerForm h1, .connectForm h1{
     text-align: center;
     margin-top: 25px;
+    font-family: 'Roboto', sans-serif !important;
+    font-size:2.2em;
+    
+}
+.ion-ios-world{
+    margin-right:10px;
 }
 
 
@@ -44,9 +84,67 @@ a{
     border: 1px solid rgba(129, 129, 129, 0.71);
     box-shadow: 0 8px 6px -6px black;
     padding: 20px;
-    border-radius: 2px;
+    border-radius: 4px;
+    background-color: #e8cbbd;
 }
  /* -------- */
+
+/*page contact*/
+
+.blockContact{
+    margin-top:25px;
+    padding: 10px;
+    border:1px solid rgba(129, 129, 129, 0.71);
+    box-shadow: 0 8px 6px -6px black;
+    background-color: rgba(232, 203, 189, 0.78);
+    border-radius: 4px;
+}
+.contact h2{
+    font-size: 2.0em;
+    font-style:italic; 
+}
+.contact h1{
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: bolder!important;
+    font-size:2.2em;
+}
+.addressCase{
+    padding-top: 25px
+}
+.lightSpan{
+    font-weight: 100 !important;
+}
+.contact{
+    margin-top: 15px;  
+}
+.ion-ios-home-outline, .ion-ios-email-outline, .ion-ios-clock-outline, .ion-ios-location-outline{
+    font-size: 25px !important;
+}
+.ion-ios-compose-outline{
+    border: 1px solid black;
+    border-radius:50%;
+    padding-left:10px; 
+    padding-right:8px; 
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.mapContact{
+    padding-top: 20px;
+    border-left: 1px dotted black;
+}
+.mapContact h2{
+    font-size: 2.0em;
+    font-style:italic; 
+}
+@media (max-width: 768px){
+    .mapContact{
+        padding-top: 20px;
+        border-left: none;
+    }
+}
+
+
+/*--------*/
 
 .connexion{
     width: 100%;
@@ -72,12 +170,6 @@ h1{
     font-size: 50px;
     text-align: center;
 }
-h2{
-    margin-left: 100px;
-    font-size: 30px;
-    margin-top: 40px;
-    margin-bottom: 20px;
-}
 p{
     color: #434843;
     font-size: 20px;
@@ -102,64 +194,8 @@ p{
     font-size: 20px;
     text-align: center;
 }
-.coter{
-    margin-right: 50px;
-    width: 25%;
-}
-aside{
-    margin-top: 61px;
-}
-.aside1{
-    width: auto;
-    margin: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    border: 1px solid #727472;
-    background-color: white;
-}
 
-.imageAside{
-    margin: auto;
-    width: 100%;
-}
 
-.texteAside{
-    width: 90%;
-    margin: auto;
-   
-}
-.galleryCoter{
-    border-bottom: 1px solid #727472;
-}
-.histoire{
-    text-align: center;
-    margin-top: 40px;
-}
-/*----------header--------*/
-
-nav{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    position: fixed;
-   
-}
-#nav{
-    z-index: 9999;
-    position: fixed;
-    top: 0;
-    width: 100%;
-     background-color: #e8d4bd !important;
-    box-shadow: 0 8px 6px -6px black;
- }
-.banner{
-    padding-top: 90px;
-    width: auto;
-    margin: auto;
-    padding-bottom: 40px;
-    
-    margin-bottom : 20px;
-    display: flex;
-}
 /*---------ShearchBar------------*/
 
 
@@ -177,51 +213,43 @@ nav{
     cursor: pointer;
 }
 /*--------CENTRE ARTICLE---------*/
-.articleTitre{
-    border: 1px solid #F4F4F4;
-    background-color: white;
-    padding-top: 50px;
 
-}
-.Total{
-    width: 60%;
-    margin-top: 100px;
-}
-#articleCentre{
-    border: 1px solid #F4F4F4;
-    margin: auto;
-    background-color: white;
-    margin-bottom: 40px;
-}
-#centreTotal{
-    border: 1px solid black;
-    
-    display: flex;
+.centreTotal{
+    border: 1px solid #767474;
+    border-radius:4px;
     background-color: #E8d4bd;
-    justify-content: center;
-    width: 90%;
+    width: 95%;
     margin: auto;
+    box-shadow: 0 8px 6px -6px #939393;
 }
-.article1 , .article2 , .article3,img{
-    width: 90%;
-    margin: auto;
-    margin-top: 30px;
-    background-color: white;
+
+.imgArticle{
+    width: 100%;
+    box-shadow: 0 8px 6px -6px #939393;
+    border: 1px solid black;
+    border-radius: 4px;
+    
 }
 .article{
-    margin-left: 100px;
-    padding-bottom: 40px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border:1px solid #767474;
+    box-shadow: 0 8px 6px -6px #939393;
+    border-radius:4px;
+}
+.articleTitle {
+    margin-top:10px  !important;
+    margin-bottom: 20px !important;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+}
 
-}
-.imageCentre{
-    width: auto;
-    text-align: center;
-}
 .texteCentre{
     width: 90%;
     margin: auto;
-    margin-top: 40px ;
-    margin-bottom: 40px;
+    margin-top: 30px ;
+    margin-bottom: 20px;
 }
 .button{
     padding-left: 30px;
@@ -231,6 +259,85 @@ nav{
     background-color: #ffff;
     margin-top: 40px;
 }
+.ion-ios-play-outline{
+    padding-right: 5px;
+}
+
+/*block de droite*/
+
+.aside1{
+    width: auto;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+    background-color: white;
+    border: 1px solid #48352f;
+    border-radius:4px;
+}
+
+.imageAside{
+    margin: auto;
+    width: 100%;
+    
+    
+}
+.rightBlock{
+    border: 1px solid #767474;
+    box-shadow: 0 8px 6px -6px #939393;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border:1px solid #767474
+    border-radius:4px;
+}
+
+.texteAside{
+    width: 90%;
+    margin: auto;
+   
+}
+.galleryCoter{
+    border-bottom: 1px solid #727472;
+    box-shadow: 0 8px 6px -6px #939393;
+}
+.abstract{ 
+    text-align: center;
+    margin-top: 25px;
+    padding:5px;
+    
+}
+.abstract p{
+    font-size: 18px;
+    padding: 5px;
+    line-height: normal;
+}
+.abstractTitle{
+    text-align: center;
+}
+.abstractTitle h3{
+    font-size: 35px;
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-weight: 600;
+}
+
+/*Espace membre*/
+
+.blockMember{
+    border: 1px solid rgba(129, 129, 129, 0.71);
+    box-shadow: 0 8px 6px -6px black;
+    padding: 20px;
+    border-radius: 4px;
+    background-color: #e8cbbd;
+    margin-top: 35px;
+    
+}
+.blockMember h1{
+    font-family: 'Roboto', sans-serif !important;
+    margin-top: 25px;
+    font-size:2.2em;
+    text-align: center;
+}
+
 /*-----apres click article --------*/
 #openArticle{
     width: 75%;

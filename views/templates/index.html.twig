@@ -6,62 +6,47 @@
 
 
 
-    <div class="banner container">
-        <div>
-            <h1>LA FORGE <br><span class="slogan">Café Associatif</span></h1>
+<div class="row banner container">
+    <div class="headertext col-xl-6  offset-xl-1 col-lg-6 offset-lg-1 col-md-7 col-sm-12 col-12">
+        <h1>LA FORGE <br><span class="slogan">Café Associatif</span></h1>
 
-            <p class="sousTitre">"Le Café Associatif La Forge est né de la volonté des habitants de La Tagnière"</p>
+        <p class="sousTitre">"Le Café Associatif La Forge est né de la volonté des habitants de La Tagnière"</p>
     </div>
-        <div class="logoCentrage">
+    <div class="col-xl-4  col-lg-4  col-md-5 col-sm-12 col-12 logoCentrage">
             <img class="logo" src="{{asset('img/logos.jpg')}}" alt="logoLaForge">
+     </div>
+</div>
+
+
+<div class="centreTotal row">
+        
+<!-----FIN-ASIDE------>
+{% for article in articles %}
+    <div class="article col-xl-6 offset-xl-1 col-lg-6 offset-lg-1 col-md-5 offset-md-1 col-sm-12 col-12">
+            
+        <h2 class="articleTitle"><span class="ion-ios-play-outline"></span>{{ article.__get('_title') }}</h2>  
+            <img class="imgArticle" src="{{ article.__get('_img_url') }}" alt="">
+        <div class="texteCentre">
+            <p>{{ article.__get('_content') }}</p>   
+            <a href="{{ path('article', { id : article.__get('_id')}) }}"><button class="btn" href="#" type="button" name="button"><strong>Voir l'article</strong></button></a>
         </div>
     </div>
-
-
-    <section id="centreTotal">
-        <aside class="col-3 col">
-            <div class="galleryCoter">
-
-
-                <div class="aside1">
-                    <img class="imageAside"  src="{{asset('img/logos.jpg')}}" alt="">
-                    <div class="texteAside">
+{% endfor %}
+    <aside class=" rightBlock col-xl-3 offset-xl-1 col-lg-3 offset-lg-1 col-md-4 offset-md-1 col-sm-12 col-12">
+        <div class="galleryCoter">
+            <div class="aside1">
+                <img class="imageAside"  src="{{asset('img/logos.jpg')}}" alt="">
+                <div class="texteAside">
                         <h3>VITAE SED ACCUMSAN </h3>
                         <p>OCTOBER 20, 2015</p>
-                    </div>
-                </div>
-
-                <div class="aside1">
-                    <img class="imageAside" src="{{asset('img/logos.jpg')}}" alt="">
-                    <div class="texteAside">
-                        <h3>RUTRUM NEQUE ACCUMSAN</h3>
-                        <p>OCTOBER 20, 2015</p>
-                    </div>
-                </div>
-
-                <div class="aside1">
-                    <img class="imageAside" src="{{asset('img/logos.jpg')}}" alt="">
-                    <div class="texteAside">
-                        <h3>ODIO CONGUE MATTIS</h3>
-                        <p>OCTOBER 20, 2015</p>
-                    </div>
-                </div>
-
-                <div id="asideDernier" class="aside1">
-                    <img class="imageAside" src="{{asset('img/logos.jpg')}}" alt="">
-                    <div class="texteAside">
-                        <h3>ENIM NISL VEROEROS</h3>
-                        <p>OCTOBER 17, 2015</p>
-                    </div>
                 </div>
             </div>
-
-            <div class="histoire">
-                <div class="histoire">
+        </div>
+            <div class="abstract">
+                <div class="abstractTitle">
                     <h3>HISTOIRE :</h3>
                 </div>
-
-                <p>Le Café Associatif La Forge est né de la volonté des habitants de La Tagnière, de créer un lieu convivial, proposant des animations diverses et variées.
+                    <p>Le Café Associatif La Forge est né de la volonté des habitants de La Tagnière, de créer un lieu convivial, proposant des animations diverses et variées.
                     C'est grâce à la municipalité, qui a mis à la disposition de l'association, une maison (Forge Coulon-Maison Mannevaux) que ce projet verra le jour courant été 2016.
                     Dans les activités, nous organiserons :</p>
                     <p>- des soirées concerts</p>
@@ -74,30 +59,7 @@
             </div>
 
         </aside>
-        <!-----FIN-ASIDE------>
-        <div class="Total">
-            {% for article in articles %}
-            <section id="articleCentre">
-
-                <div class="articleTitre">
-                    <h2>{{ article.__get('_title') }}</h2>
-                </div>
-
-                <div class="article1">
-
-                    <div class="imageCentre">
-                        <img src="{{ article.__get('_img_url') }}" alt="">
-                    </div>
-
-                    <div class="texteCentre">
-                        <p>{{ article.__get('_content') }}</p>                      
-                   
-                        <a href="{{ path('article', { id : article.__get('_id')}) }}"><button class="btn" href="#" type="button" name="button"><strong>Voir l'article</strong></button></a>
-                    </div>
-                </div>
-            </section>
         </div>
-    </section>
-    {% endfor %}
+    
 
 {% endblock %}
