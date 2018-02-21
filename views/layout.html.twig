@@ -5,11 +5,21 @@
         <title>{{ pageTitle}}</title>
         <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<<<<<<< HEAD
         <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico|Poiret+One|Annie+Use+Your+Telescope|Roboto" rel="stylesheet">
+=======
+        <link rel="stylesheet" href="{{ asset('css/typenohead.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico|Poiret+One" rel="stylesheet">
+>>>>>>> origin/master
     </head>
     <body>
         <!-----------HEADER---------->
+
+        <script>
+            var indexPath = "{{ path('home') }}";
+        </script>
+
         <header>
             <div class="Menu">
                 <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,25 +38,32 @@
                                 <a class="nav-link" href="{{path('contact')}}">Contact <span class="sr-only">(current)</span></a>
                             </li>
 
+                            {% if global.session.get('user')['id'] is not defined %}
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{path('register')}}">Inscription <span class="sr-only">(current)</span></a>
                             </li>
-
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{path('connection')}}">Connexion <span class="sr-only">(current)</span></a>
                             </li>
+<<<<<<< HEAD
                                
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{path('member-area')}}">Espace membre<span class="sr-only">(current)</span></a>
                             </li>
                         </ul>
+=======
+                            {% else %}
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{path('deconnection')}}">Deconnection <span class="sr-only">(current)</span></a>
+                            </li>
+                            {% endif %}
+>>>>>>> origin/master
 
-                        <form class="form-inline my-2 my-lg-0">
+                        </ul>
 
-                            <div id="the-basics">
-                                <input class="form-control mr-sm-2 typeahead" type="text" placeholder="Rechercher">
-                               
-                            </div>
+                        <form class="search-form form-inline my-2 my-lg-0">
+                            <input data-ajax="{{ path('search') }}" class="form-control mr-sm-2 typeahead" type="text" placeholder="Rechercher">
+                            <div id="search-suggestion"></div>
                         </form>
 
                     </div>
@@ -61,16 +78,14 @@
         <!------------FOOTER---------->
         <footer>
             <div class="pied">
-                <p>© 2018 La Forge By ...</p>
+                <p>© 2018 La Forge By</p>
+                <p>Pernette Jerrylee, Siméon Jérôme, Voynier Valentin et Marc-Antoine Dur</p>
             </div>
         </footer>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script type="text/javascript" src="{{ asset('script/script.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('script/bloodhound.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('script/typeahead.bundle.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('script/typeahead.jquery.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('script/typeahead.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('script/typenohead.js') }}"></script>
     </body>
 </html>

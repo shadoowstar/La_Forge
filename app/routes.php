@@ -9,18 +9,31 @@ $app->get('/', 'Controller\Controller::indexAction')
 $app->get('/contact/', 'Controller\Controller::contactAction')
     ->bind('contact');//donne un nom a cette route
 
-$app->get('/register/', 'Controller\Controller::registerAction')
+$app->match('/register/', 'Controller\Controller::registerAction')
+    ->method('GET|POST')
     ->bind('register');//donne un nom a cette route
 
 $app->get('/connection/', 'Controller\Controller::connectionAction')
     ->bind('connection');//donne un nom a cette route
 
+$app->get('/deconnection/', 'Controller\Controller::logoutAction')
+    ->bind('deconnection');
+
 $app->get('/article/{id}', 'Controller\Controller::articleAction')
     ->bind('article');
 
+<<<<<<< HEAD
 $app->get('/espace-membre/', 'Controller\Controller::memberAction')
     ->bind('member-area');
 
+=======
+$app->get('/search/', 'Controller\Controller::searchAction')
+    ->bind('search');
+
+$app->match('/sign-in/', 'Controller\Controller::signinAction')
+    ->method('POST')
+    ->bind('sign-in');
+>>>>>>> origin/master
 
 $app->error(function(Exception $e, Request $request, $code) use($app)
 {
