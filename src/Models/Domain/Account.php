@@ -21,36 +21,13 @@ class Account{
     /**
      * Getters des Attributs des comptes
      */
-    public function getId(){
-        return $this->_id;
-    }
-
-    public function getEmail(){
-        return $this->_email;
-    }
-
-    public function getPassword(){
-        return $this->_password;
-    }
-
-    public function getName(){
-        return $this->_name;
-    }
-
-    public function getFirstname(){
-        return $this->_firstname;
-    }
-
-    public function getAddressLine(){
-        return $this->_address_line;
-    }
-
-    public function getAddressCity(){
-        return $this->_adresse_city;
-    }
-
-    public function getAddressPostalCode(){
-        return $this->_adress_postal_code;
+    public function __get($variable)
+    {
+        if(!isset($this->$variable))
+        {
+            throw new Exception('Erreur lors de la lecture de la variable "'. $variable .'"');
+        }
+        return $this->$variable;
     }
 
     /**
