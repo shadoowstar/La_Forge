@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+
+{% set pageTitle = 'création d\'evenement' %}
+
+{% block content %}
+
+<form id="calendarAdminForm" class="form-group" method="post">
+    <label for="eventTitle">Nom de l'evenement </label>
+    <input class="form-control" type="text" name="eventTitle" id="eventTitle">
+    <label for="eventDate">Date</label>
+    <input class="form-control" type="date" name="eventDate" id="eventDate">
+    <label for="eventDesc">Description de l'evenement</label>
+    <textarea name="eventDesc" rows="8" cols="50" id="eventDesc"></textarea>
+    <button id="btn"type="submit" class="btn btn-primary">Envoyer</button>
+</form>
+
+{% endblock %}

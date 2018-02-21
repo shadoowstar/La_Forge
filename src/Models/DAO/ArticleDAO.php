@@ -73,52 +73,6 @@ class ArticleDAO
         return $articlelist;
     }
 
-    public function getArticleById($id)
-    {
-        $response = $this->_db->prepare('SELECT * FROM articles WHERE id=:id');
-        $response->bindvalue('id', $id, PDO::PARAM_INT);
-        $response->execute();
-        $article_db = $response->fetch();
 
-        if(empty($article_db))
-        {
-            return false;
-        }
 
-        $article = new Article();
-        $article->setId($article_db['id']);
-        $article->setTitle($article_db['title']);
-        $article->setContent($article_db['content']);
-        $article->setImgUrl($article_db['img_url']);
-        //$article->setPostDate($row['post_date']);
-        
-        return $article;
-    }
-
-    public function getArticlesByName($name)
-    {
-        $response = $this->_db->prepare('SELECT * FROM articles WHERE title LIKE :title ORDER BY id DESC');
-        $response->bindvalue('title', '%'.$name.'%');
-        $response->execute();
-        $article_db = $response->fetchAll();
-
-        if(empty($article_db))
-        {
-            return false;
-        }
-        $article_list = array();
-        foreach($article_db as $row)
-        {
-            $article = new Article();
-            $article->setId($row['id']);
-            $article->setTitle($row['title']);
-            $article->setContent($row['content']);
-            $article->setImgUrl($row['img_url']);
-            //$article->setPostDate($row['post_date']);
-            $article_list[] = $article;
-
-        }
-        
-        return $article_list;
-    }
 }

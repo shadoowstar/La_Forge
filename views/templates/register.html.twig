@@ -5,58 +5,63 @@
 
 {% block content %}
 
-<div class=" inscription">
-    <form method="post" id="registerForm" class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-sm-8 offset-sm-2">
-    <h1 class="ion-ios-personadd-outline"> Inscription </h1>
-    <div class="form-row">
-        <div class="form-group col-sm-6 col-6">
-            <label for="inputCity">Nom</label>
-            <input type="text" class="form-control" id="name" name="name">
-        </div>
+<h1>Inscription La Forge :</h1>
+<div class="container inscription">
+    <form>
+  <div class="form-row">
 
-        <div class="form-group col-sm-5 offset-sm-1 col-6">
-        <label for="inputZip">Prénom</label>
-        <input type="text" class="form-control" id="firstname" name="firstname">
-        </div>
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Exemple@exemple.fr">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">ConfirmePassword</label>
+      <input type="password" class="form-control" id="inputPassword4">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputAddress">Addresse</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="12 rue saint jack">
+  </div>
+
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2">
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">Ville</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+
+    <div class="form-group col-md-2">
+      <label for="inputZip">Code Postal</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    <div class="form-check">
+
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Vous accepter d'enregistrer vos informations personnel
+      </label>
 
     </div>
-        <div class="form-group">
-            <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Exemple@exemple.fr">
-        </div>
+  </div>
 
-        <div class="form-group">
-            <label for="inputPassword4">Mot de passe</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Veuillez choisir un mot de passe">
-        </div>
-
-        <div class="form-group">
-            <label for="inputPassword4">Vérification du mot de passe</label>
-            <input type="password" class="form-control" id="passwordVerif" name="passwordVerif">
-        </div>
-
-
-        <div class="form-group">
-            <label for="inputAddress">Addresse</label>
-            <input type="text" class="form-control" id="addressLine" name="addressLine" placeholder="12 rue saint jack">
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-sm-8 col-12 ">
-                <label for="inputCity">Ville</label>
-                <input type="text" class="form-control" id="addressCity" name="addressCity">
-            </div>
-
-            <div class="form-group col-sm-3 offset-sm-1 col-12">
-            <label for="inputZip">Code Postal</label>
-            <input type="text" class="form-control" id="addressPostalCode" name="addressPostalCode">
-            </div>
-
-        </div>
-
-
-        <button type="submit" class="btn col-4 offset-4">Valider</button>
-    </form>
+  <button type="submit" class="btn">Sign in</button>
+</form>
 </div>
 
 {% endblock %}

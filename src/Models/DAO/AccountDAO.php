@@ -2,16 +2,13 @@
 namespace Models\DAO;
 
 use \PDO;
-use Silex\Application;
 use Models\Domain\Account;
-use Doctrine\DBAL\Connection;
 
-class AccountDAO
-{
+class AccountDAO{
     protected $_db;
 
-    public function __construct($_db){
-        $this->setDb($_db);
+    public function __construct($db){
+        $this->setDb($db);
     }
 
     public function getDb(){
@@ -20,12 +17,6 @@ class AccountDAO
 
     public function setDb(Connection $newDb){
         $this->_db = $newDb;
-    }
-
-    public function isConnected(Application $app){
-        if (isset($app['session']->get('user')['id'])) {
-            return true;
-        }
     }
 
     public function findAll(){
@@ -48,37 +39,32 @@ class AccountDAO
         $newAccount->setPassword($array['password']);
         $newAccount->setName($array['name']);
         $newAccount->setFirstname($array['firstname']);
-        $newAccount->setAddressLine($array['addressLine']);
-        $newAccount->setAddressCity($array['addressCity']);
-        $newAccount->setAddressPostalCode($array['addressPostalCode']);
         $newAccount->setId($array['id']);
         return $newAccount;
     }
-
     public function save(Account $accounts){
         $userData = array(
             'email'=>$accounts->getEmail(),
             'password'=>$accounts->getPassword(),
             'name'=>$accounts->getName(),
-            'firstname'=>$accounts->getFirstname(),
-            'addressLine'=>$accounts->getAddressLine(),
-            'addressCity'=>$accounts->getAddressCity(),
-            'addressPostalCode'=>$accounts->getAddressPostalCode(),
+            'firstname'=>$accounts->getFirstname()
         );
-        return $this->getDb()->insert('users', $userData);
+        return $this->getDb()->insert('accounts', $userData);
     }
+    // public function verif($email){
+    //     $response =$this->getDb()->prepare("SELECT * FROM users WHERE email = ?");
+    //     $response->bindValue(1, $email);
+    //     $response->execute();
+    //     $affectedRows = $response->rowCount();
+    //     $response->closeCursor();
+    //
+    //     if ($affectedRows > 0) {
+    //         return true;
+    //     }else {
+    //         return false;
+    //     }
+    // }
 
-    public function findByEmail($email){
-        $response = $this->getDb()->prepare('SELECT * FROM users WHERE email = ?');
-        $response ->bindvalue(1, $email);
-        $response->execute();
-        $account = $response->fetch(PDO::FETCH_ASSOC);
-
-        if (!empty($account)) {
-            return $this->buildAccount($account);
-        }
-        return false;
-    }
 }
 
 ?>

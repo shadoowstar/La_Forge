@@ -9,28 +9,27 @@ $app->get('/', 'Controller\Controller::indexAction')
 $app->get('/contact/', 'Controller\Controller::contactAction')
     ->bind('contact');//donne un nom a cette route
 
-$app->match('/register/', 'Controller\Controller::registerAction')
-    ->method('GET|POST')
+$app->get('/register/', 'Controller\Controller::registerAction')
     ->bind('register');//donne un nom a cette route
 
 $app->get('/connection/', 'Controller\Controller::connectionAction')
     ->bind('connection');//donne un nom a cette route
 
-$app->get('/deconnection/', 'Controller\Controller::logoutAction')
-    ->bind('deconnection');
-
 $app->get('/article/{id}', 'Controller\Controller::articleAction')
     ->bind('article');
 
-$app->get('/espace-membre/', 'Controller\Controller::memberAction')
-    ->bind('member-area');
+$app->get('/event/', 'Controller\Controller::eventAction')
+    ->bind('event');
 
-$app->get('/search/', 'Controller\Controller::searchAction')
-    ->bind('search');
+$app->match('/calendarAdmin/', 'Controller\Controller::calendarAdminAction')
+    ->method('GET|POST')
+    ->bind('calendarAdmin');
 
-$app->match('/sign-in/', 'Controller\Controller::signinAction')
-    ->method('POST')
-    ->bind('sign-in');
+$app->post('/event-submit/', 'Controller\Controller::eventSubmitAction')
+    ->bind('event-submit');
+
+$app->post('/get-event/', 'Controller\Controller::getEventAction')
+    ->bind('get-event');
 
 $app->error(function(Exception $e, Request $request, $code) use($app)
 {
