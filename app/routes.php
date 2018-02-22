@@ -18,6 +18,18 @@ $app->get('/connection/', 'Controller\Controller::connectionAction')
 $app->get('/article/{id}', 'Controller\Controller::articleAction')
     ->bind('article');
 
+$app->get('/event/', 'Controller\Controller::eventAction')
+    ->bind('event');
+
+$app->match('/calendarAdmin/', 'Controller\Controller::calendarAdminAction')
+    ->method('GET|POST')
+    ->bind('calendarAdmin');
+
+$app->post('/event-submit/', 'Controller\Controller::eventSubmitAction')
+    ->bind('event-submit');
+
+$app->post('/get-event/', 'Controller\Controller::getEventAction')
+    ->bind('get-event');
 
 $app->error(function(Exception $e, Request $request, $code) use($app)
 {

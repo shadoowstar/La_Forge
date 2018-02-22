@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig' %}
+
+{% set pageTitle = 'calendrier des evenement' %}
+
+{% block content %}
+
+
+    <div id='calendar'></div>
+    
+<script src="{{ asset('lib/jquery.min.js') }}"></script>
+<script src="{{ asset('lib/moment.min.js') }}"></script>
+{% endblock %}

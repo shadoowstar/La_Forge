@@ -75,29 +75,8 @@
 
         </aside>
         <!-----FIN-ASIDE------>
-        <div class="Total">
-            {% for article in articles %}
-            <section id="articleCentre">
 
-                <div class="articleTitre">
-                    <h2>{{ article.__get('_title') }}</h2>
-                </div>
-
-                <div class="article1">
-
-                    <div class="imageCentre">
-                        <img src="{{ article.__get('_img_url') }}" alt="">
-                    </div>
-
-                    <div class="texteCentre">
-                        <p>{{ article.__get('_content') }}</p>                      
-                   
-                        <a href="{{ path('article', { id : article.__get('_id')}) }}"><button class="btn" href="#" type="button" name="button"><strong>Voir l'article</strong></button></a>
-                    </div>
-                </div>
-            </section>
-        </div>
     </section>
-    {% endfor %}
+
 
 {% endblock %}

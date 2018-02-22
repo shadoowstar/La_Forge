@@ -3,8 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>{{ pageTitle}}</title>
-        <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/overlay.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/fullcalendar.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/fullcalendar.print.min.css') }}" media='print'>
         <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Pacifico|Poiret+One" rel="stylesheet">
     </head>
     <body>
@@ -34,6 +37,12 @@
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{path('connection')}}">Connection <span class="sr-only">(current)</span></a>
                             </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{path('event')}}">Calendrier <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{path('calendarAdmin')}}">Ajout d'evenement<span class="sr-only">(current)</span></a>
+                            </li>
                         </ul>
 
                         <form class="form-inline my-2 my-lg-0">
@@ -56,9 +65,18 @@
                 <p>© 2018 La Forge By ...</p>
             </div>
         </footer>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script>
+        const pageUrl = "{{ path("home") }}";
+        const assetUrl = "{{ asset('') }}";
+        </script>
+        <script type="text/javascript" src="{{ asset('script/jquery-3.3.1.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('script/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('script/moment.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('script/popper.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('script/fullcalendar.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('script/script.js') }}"></script>
+        {% if global.request.get('_route') == 'event' %}<script type="text/javascript" src="{{ asset('script/calendar.js') }}"></script>{% endif %}
+        {% if global.request.get('_route') == 'calendarAdmin' %}<script type="text/javascript" src="{{ asset('script/eventSubmit.js') }}"></script>{% endif %}
+
     </body>
 </html>
